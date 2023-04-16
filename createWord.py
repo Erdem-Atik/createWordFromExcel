@@ -14,15 +14,15 @@ for index, row in df.iterrows():
     address = row[1]
     coordinates = row[2]
     
-
     # Create a new Word document
- 
-
-    # Add content to the Word document
-    # document.add_heading('Document Title', 0)
-    # document.add_paragraph('ID: ' + id)
-    # document.add_paragraph('Address: ' + address)
-    # document.add_paragraph('Coordinates: ' + coordinates)
+    table = document.tables[0]
+    cell_1 = table.cell(1, 5)  # Access the second cell in the first row
+    cell_2 = table.cell(3,2 )  # Access the second cell in the second row
+    cell_3 = table.cell(2,2)  # Access the second cell in the third row
+    
+    cell_1.add_paragraph(id)
+    cell_2.add_paragraph(address)
+    cell_3.add_paragraph(coordinates)
 
     # Save the Word document with the ID and application form as the file name
     filename = f"{id} application form.docx"
