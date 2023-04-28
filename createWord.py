@@ -11,13 +11,12 @@ template = Document(r'D:\CODING\PYTHON\BTK_BAZ_İSTASYON\CreateWordFromExcel\app
 for index, row in df.iterrows():
     document = Document(r'D:\CODING\PYTHON\BTK_BAZ_İSTASYON\CreateWordFromExcel\application_form.docx')
     # Extract the ID, Address, and Coordinates from the row
-    id = str(row[0]).replace('.pdf', '')
-    id = str(row[0]).replace('SER', '')
+    id = str(row[0]).replace('.pdf', '').strip()
+
 
     address = row[1]
     coordinates = row[2]
     cord_len = (len(coordinates))
-    print(type(cord_len))
     longitutde =coordinates[0:cord_len//2].strip()
     latitude = coordinates[((cord_len//2)+1):cord_len].strip()
     
